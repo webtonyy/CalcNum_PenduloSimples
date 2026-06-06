@@ -1,0 +1,28 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\contentsline {chapter}{Sum\'ario}{2}{chapter*.2}%
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{3}{chapter.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Desenvolvimento}}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Modelagem Matemática}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Equação Diferencial Governante}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Método de Diferenças Finitas}{4}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Jacobiana Analítica}{5}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Método de Newton-Raphson}{5}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Implementação Computacional}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Vetores de Chute Inicial}{6}{subsection.2.2.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Resultados}}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Soluções $\theta (t)$}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Análise de Convergência}{7}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Discussão: Sensibilidade ao Chute Inicial}{8}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Comparação: Modelo Não-Linear vs.\ Linearizado}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Estudo Paramétrico: Terra vs.\ Mercúrio}{9}{section.3.4}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Conclusão}}{11}{chapter.4}%
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{Referências}{12}{chapter*.10}%
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{13}{section*.13}%
