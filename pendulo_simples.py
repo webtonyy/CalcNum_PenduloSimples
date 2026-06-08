@@ -48,13 +48,24 @@ def montar_sistema(theta, h, L, g, alpha, beta):
     Os nós de contorno (θ_0 = alpha, θ_{m+1} = beta)
     são incorporados nos termos i=0 e i=m-1.
     """
-    m  = len(theta)
+    m  = len(theta) # quantidade de passos
     h2 = h ** 2
     G  = np.zeros(m)
 
     for i in range(m):
-        theta_prev = alpha   if i == 0   else theta[i - 1]
-        theta_next = beta    if i == m-1 else theta[i + 1]
+
+        # tratando as condições de contorno do problema:
+        if i == 0: 
+            theta_prev = alpha   
+        else:
+            theta_prev = theta[i - 1]
+
+        if i == m-1:
+            theta_next = beta
+        else:
+            theta_next = theta[i + 1]
+
+        # Aplicando o método das diferenças finitas na EDO:
         G[i] = theta_prev - 2*theta[i] + theta_next + h2 * (g/L) * np.sin(theta[i])
 
     return G
@@ -108,8 +119,8 @@ def newton_raphson(theta0, h, L, g, alpha, beta, tol=TOL, maxiter=MAXITER):
         theta_k    += delta_theta
 
         # Erro relativo  ε_r = ||Δθ|| / ||θ_k||
-        norma_delta = np.linalg.norm(delta_theta)
-        norma_theta = np.linalg.norm(theta_k)
+        norma_delta = np.linalg.norm(delta_theta, ord=np.inf)
+        norma_theta = np.linalg.norm(theta_k, ord=np.inf)
         eps_r = norma_delta / (norma_theta + 1e-300)
         erros.append(eps_r)
 
