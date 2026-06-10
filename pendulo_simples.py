@@ -3,25 +3,6 @@ Projeto Computacional #3 — Pêndulo Simples (SME0104 - ICMC/USP)
 ================================================================
 Resolução do Problema de Valor de Contorno (PVC) não-linear via
 Método de Diferenças Finitas Centradas + Newton-Raphson.
-
-Equação governante:
-    θ''(t) + (g/L) * sin(θ(t)) = 0,   t ∈ (0, T)
-    θ(0) = α,   θ(T) = β
-
-Discretização por Diferenças Finitas Centradas (h = T / (m+1)):
-    G_i(θ) = θ_{i-1} - 2θ_i + θ_{i+1} + h²·(g/L)·sin(θ_i) = 0
-
-Jacobiana analítica (estrutura tridiagonal):
-    J_{i,i}   = -2 + h²·(g/L)·cos(θ_i)   (diagonal principal)
-    J_{i,i-1} = 1                           (subdiagonal)
-    J_{i,i+1} = 1                           (superdiagonal)
-
-Método de Newton (Ruggiero & Lopes, Cap. 4):
-    Dado θ^(0), para k = 0, 1, 2, ...
-        Calcule G(θ^(k)) e J(θ^(k))
-        Resolva  J(θ^(k)) · s^(k) = -G(θ^(k))
-        Faça     θ^(k+1) = θ^(k) + s^(k)
-        Se ||θ^(k+1) - θ^(k)||_∞ / ||θ^(k+1)||_∞ < tol → pare
 """
 
 import numpy as np
@@ -310,7 +291,7 @@ if __name__ == "__main__":
     # ── 8.4  Não-linear vs Linearizado ────────────────────────────
     m = 100
     t_nl, theta_nl, _ = resolver_pvc(m, L, g_terra, alpha, beta,
-                                     chute="constante", label="Não-linear")
+                                     chute="senoidal", label="Não-linear")
     t_lin, theta_lin = resolver_pvc_linear(m, L, g_terra, alpha, beta)
 
     plt.figure(figsize=(8, 5))
@@ -347,6 +328,7 @@ if __name__ == "__main__":
     plt.close()
     print("Salvo: terra_vs_mercurio.png")
 
+    '''
     # ── 8.6  Mapa de sensibilidade / estrutura fractal ─────────────
     print("\nGerando mapa de sensibilidade (fractais)... aguarde.")
     alphas, betas, itermap = mapa_sensibilidade(m=60, n_alpha=80, n_beta=80)
@@ -365,6 +347,7 @@ if __name__ == "__main__":
     plt.savefig("sensibilidade_fractal.png", dpi=150)
     plt.close()
     print("Salvo: sensibilidade_fractal.png")
+    '''
 
     # ── 8.7  Animação comparativa: Terra vs Mercúrio ───────────────
     t_anim   = resultados[(100, "constante")][0]
